@@ -1,0 +1,23 @@
+
+scenes:
+  - scene "scenename"
+    length: number for seconds | 'shortest' for shortest video
+    video: #description of videos
+      options:
+        - option: 'loop_random_all' # loop all videos different screens switch
+          repeat: 5
+        - option: 'loop_seq_all' #loop video sequential on one screen (or fullscreen)
+      fillin: noise | testimage | black
+      distort: number (lower is more distortion)
+      files:
+        - filename: "filename"
+          position:  'random' or 'screenname' or 'fullscreen'
+   sound:
+     distort: number (lower is more distortion)
+     fillin: noise | false
+     options:
+         add_base_noise: true
+         sort: 'sorted' | 'random'
+     files:
+       -filename: "filename"
+     type: sorted | random
