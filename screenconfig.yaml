@@ -1,0 +1,25 @@
+screens:
+    rows:
+       - row:
+         - screen: name1
+           width: 640
+           height: 480
+         - screen: name2
+           width: 640
+           height: 480
+         - screen: name3
+           width: 640
+           height: 480
+       - row:
+         - screen: name1
+           width: 320
+           height: 240
+         - screen: name2
+           width: 640
+           height: 480
+         - screen: name3
+           width: 320
+           height: 240
+         - screen: name4
+           width: 640
+           height: 480

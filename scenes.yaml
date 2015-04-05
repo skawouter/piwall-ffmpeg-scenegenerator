@@ -1,0 +1,75 @@
+scenes:
+  - scene: "what drugs do you use"
+    length: "shortest"
+    video:
+      fillin: "noise"
+      files:
+        - filename: "what_drugs.m4v"
+          position: 'random'
+    sound:
+      options:
+        original: true
+
+  - scene: "cara mia"
+    length: "10"
+    video:
+      fillin: false
+      files:
+        - filename: "cara_mia.mp4"
+          position: "fullscreen"
+    sound:
+      options:
+        original: true
+
+  - scene: "flash"
+    length: "shortest"
+    video:
+      options:
+        - option: "loop_seq_all"
+          repeat: 5
+      fillin: testimage
+      files:
+        - filename: "looping_static_1.mov"
+          position: 'random'
+        - filename: "looping_static_2.mov"
+          position: 'random'
+    sound:
+      distort: 100
+      fillin: 'noise'
+
+  - scene: "flash2"
+    length: "shortest"
+    video:
+      fillin: testimage
+      options:
+        - option: 'loop_random_all'
+          repeat: 5
+      files:
+        - filename: "looping_static_1.mov"
+          position: 'random'
+        - filename: "looping_static_2.mov"
+          position: 'random'
+
+  - scene: "newsdistort"
+    length: "30"
+    video:
+      distort: 200000
+      fillin: 'testimage'
+      files:
+        - filename: "news/news10.avi"
+          position: 'random'
+        - filename: "news/news11.avi"
+          position: 'random'
+        - filename: "news/news12.avi"
+          position: 'random'
+        - filename: "news/news13.avi"
+          position: 'random'
+    sound:
+      distort: 100
+      fillin: false
+      options:
+        add_base_noise: true
+        sort: 'sorted'
+      files:
+        - filename: "news/sound/hallway-crowd.mp3"
+        - filename: "news/sound/people-cheering.mp3"
