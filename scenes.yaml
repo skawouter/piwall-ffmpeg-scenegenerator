@@ -1,18 +1,41 @@
 scenes:
   - scene: "what drugs do you use"
-    length: "shortest"
     video:
+      length: 'shortest'
       fillin: "noise"
       files:
-        - filename: "what_drugs.m4v"
+        - filename: "../done/what_drugs.mp4"
           position: 'random'
     sound:
       options:
+        add_base_noise: true
         original: true
 
-  - scene: "cara mia"
-    length: "10"
+  - scene: 'cypher'
     video:
+      length: 'shortest'
+      fillin: 'noise'
+      files:
+        - filename: "../done/matrix_cyber.mp4"
+          position: 'random'
+    sound:
+      options:
+        add_base_noise: true
+
+  - scene: ''
+    video:
+      length: 'shortest'
+      fillin: 'noise'
+      files:
+        - filename: "../done/matrix_cyber.mp4"
+          position: 'random'
+    sound:
+      options:
+        add_base_noise: true
+
+  - scene: "cara mia"
+    video:
+      length: "shortest"
       fillin: false
       files:
         - filename: "cara_mia.mp4"
@@ -22,41 +45,69 @@ scenes:
         original: true
 
   - scene: "flash"
-    length: "shortest"
     video:
+      length: "10"
       options:
         - option: "loop_seq_all"
           repeat: 5
-      fillin: testimage
+
+      fillin: noise
       files:
         - filename: "looping_static_1.mov"
           position: 'random'
         - filename: "looping_static_2.mov"
           position: 'random'
     sound:
-      distort: 100
-      fillin: 'noise'
-
-  - scene: "flash2"
-    length: "shortest"
-    video:
-      fillin: testimage
       options:
-        - option: 'loop_random_all'
-          repeat: 5
-      files:
-        - filename: "looping_static_1.mov"
-          position: 'random'
-        - filename: "looping_static_2.mov"
-          position: 'random'
+        add_base_noise: true
 
-  - scene: "newsdistort"
-    length: "30"
+  - scene: 'randomize'
     video:
-      distort: 200000
+      length: 10
       fillin: 'testimage'
       files:
-        - filename: "news/news10.avi"
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 0
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 0.5
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 1
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 1.5
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 2
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 3
+        - filename: '../done/purge.mp4'
+          position: 'random'
+          startat: 3
+    sound:
+      options:
+        original: true
+
+  - scene: "newsdistort"
+    video:
+      length: "30"
+      fillin: 'testimage'
+      distort: 200000
+      files:
+        - filename: "news/news4.avi"
+          position: 'random'
+        - filename: "news/news5.avi"
+          position: 'random'
+        - filename: "news/news6.avi"
+          position: 'random'
+        - filename: "news/news7.avi"
+          position: 'random'
+        - filename: "news/news8.avi"
+          position: 'random'
+        - filename: "news/news9.avi"
           position: 'random'
         - filename: "news/news11.avi"
           position: 'random'
@@ -65,8 +116,8 @@ scenes:
         - filename: "news/news13.avi"
           position: 'random'
     sound:
-      distort: 100
       fillin: false
+      distort: 200
       options:
         add_base_noise: true
         sort: 'sorted'

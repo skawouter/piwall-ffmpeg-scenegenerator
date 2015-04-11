@@ -49,24 +49,29 @@ def main(argv):
         arglist.append(complexfilter[0] +  '; '.join(complexfilter[1:-1])
             + complexfilter[-1])
         arglist += endstr 
+
+        #limit file size to 40Mb
+        arglist.append(' -fs 41943040 ')
         arglist.append(outputfile)
-        if os.path.exists(outputfile):
-            os.remove(outputfile)
 
         arglist = [ x for x in arglist if x ]
         print ' '.join(arglist)
 
         print 'Start generating'
         if execflag:
-            proc = subprocess.Popen([' '.join(arglist)], shell=True,
-                stdout=None, stderr=None)
+            if os.path.exists(outputfile):
+                os.remove(outputfile)
+            with open('/dev/null', 'wb') as f:
+                proc = subprocess.Popen([' '.join(arglist)], shell=True,
+                    stdout=f, stderr=subprocess.PIPE)
             out, err = proc.communicate()
-            print proc.returncode
-            if not err:
+            if not proc.returncode:
                 print "Video generated"
             else:
                 print "FAIL"
-                print subprocess.check_output([' '.join(arglist)], shell=True)
+                print err
+                print "FAIL"
+
 
 #except Exception as e:
 #        raise e

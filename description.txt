@@ -1,8 +1,8 @@
 
 scenes:
   - scene "scenename"
-    length: number for seconds | 'shortest' for shortest video
     video: #description of videos
+      length: number for seconds | 'shortest' for shortest video
       options:
         - option: 'loop_random_all' # loop all videos different screens switch
           repeat: 5
@@ -12,12 +12,12 @@ scenes:
       files:
         - filename: "filename"
           position:  'random' or 'screenname' or 'fullscreen'
+          startat: number for seconds | or 'random'
    sound:
      distort: number (lower is more distortion)
-     fillin: noise | false
      options:
          add_base_noise: true
          sort: 'sorted' | 'random'
      files:
        -filename: "filename"
-     type: sorted | random
+        position: 'random' or 'position'
