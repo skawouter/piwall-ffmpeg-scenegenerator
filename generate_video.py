@@ -9,7 +9,7 @@ import generategroup
 def main(argv):
 #    try:
         totalscenes = 0
-        optlist, args = getopt.getopt(argv, 'pen:o:b:c:g:')
+        optlist, args = getopt.getopt(argv, 'phen:o:b:c:g:', ['help'])
 
         outputfile = groupscene = ''
         basepath = configpath = './'
@@ -27,6 +27,20 @@ def main(argv):
                 execflag = True
             if opt == '-g':
                 groupscene = arg
+            if opt == '--help' or opt == '-h':
+                print '''Usage: python ./generate_video.py options [scenename]
+
+Options:
+  -n total scenes to generate at random
+  -o output file (mandatory)
+  -b basepath to videofiles
+  -c path to yaml config files
+  -e actually execute with ffmpeg. With groupscenes the scenes
+     are always generated.
+  -g generate groupscene with name
+  -h, --help show help
+'''
+                return
 
         with open(configpath + 'screenconfig.yaml') as f:
             screenconfig = yaml.safe_load(f)
