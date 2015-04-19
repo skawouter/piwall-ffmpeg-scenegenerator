@@ -106,7 +106,7 @@ class Video(object):
                 newcurr = '[tmp' + repr(currcount) + ']'
                 sh = 1 if self.length == 'shortest' else 0
                 layers.append('{currlast} [row{rown}place{rowposn}] overlay='
-                'shortest={shortest}:eof_action=pass:x={x}:y={y}'.format(
+                'shortest={shortest}:x={x}:y={y}'.format(
                 currlast=currlast, rown=row, rowposn=rowposcount,
                 x=widthoffset, y=heightoffset, shortest=sh))
                 layers[-1] += newcurr
