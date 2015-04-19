@@ -22,27 +22,53 @@ scenes:
       options:
         add_base_noise: true
 
-  - scene: ''
+  - scene: 'train'
     video:
       length: 'shortest'
       fillin: 'noise'
       files:
-        - filename: "../done/matrix_cyber.mp4"
+        - filename: "../done/trains.mp4"
           position: 'random'
     sound:
       options:
         add_base_noise: true
+
+  - scene: "error"
+    video:
+      length: "shortest"
+      fillin: false
+      files:
+        - filename: "../done/error.mp4"
+          position: "fullscreen"
+    sound:
+      options:
+        test: 'none'
 
   - scene: "cara mia"
     video:
       length: "shortest"
       fillin: false
       files:
-        - filename: "cara_mia.mp4"
+        - filename: "../cara_mia.mp4"
           position: "fullscreen"
     sound:
       options:
         original: true
+
+  - scene: "exist"
+    video:
+      length: "shortest"
+      fillin: noise
+      files:
+        - filename: "../done/exist.mp4"
+          position: "random"
+        - filename: "../done/exist.mp4"
+          position: "random"
+        - filename: "../done/exist.mp4"
+          position: "random"
+    sound:
+      options:
+        add_base_noise: true
 
   - scene: "flash"
     video:
@@ -124,3 +150,129 @@ scenes:
       files:
         - filename: "news/sound/hallway-crowd.mp3"
         - filename: "news/sound/people-cheering.mp3"
+
+  - scene: akira_distort
+    video:
+      length: 30
+      fillin: noise
+      files:
+        - filename: '../done/akira_distort.mp4'
+          position: random
+        - filename: '../done/akira_distort.mp4'
+          position: random
+          startat: 2
+        - filename: '../done/akira_distort.mp4'
+          position: random
+          startat: 4
+        - filename: '../done/akira_distort.mp4'
+          position: random
+          startat: 5
+        - filename: '../done/akira_distort.mp4'
+          position: random
+          startat: 9
+    sound:
+      options:
+        original: true
+
+  - scene: akira_single
+    video:
+      length: 10
+      fillin: noise
+      files:
+        - filename: '../done/akira_single.mp4'
+          position: random
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 1
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 2
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 3
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 4
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 5
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 6
+        - filename: '../done/akira_single.mp4'
+          position: random
+          startat: 7
+    sound:
+      options:
+        original: true
+
+  - scene: mix_matri_blade
+    video:
+      length: shortest
+      fillin: testimage
+      files:
+        - filename: '../done/mercy_clean.mp4'
+          position: 0
+        - filename: '../done/mercy_clean.mp4'
+          position: 1
+        - filename: '../done/mercy_clean.mp4'
+          position: 2
+        - filename: '../done/bladerunner_commercial.mp4'
+          position: 3
+        - filename: '../done/bladerunner_commercial.mp4'
+          position: 4
+        - filename: '../done/bladerunner_commercial.mp4'
+          position: 5
+        - filename: '../done/bladerunner_commercial.mp4'
+          position: 6
+    sound:
+      options:
+        original: true
+
+  - scene: shit
+    video:
+      length: shortest
+      fillin: false
+      noise: 100000
+      files:
+        - filename: '../done/theymakeshit.mp4'
+          position: fullscreen
+    sound:
+      options:
+        original: true
+
+  - scene: shoot_robot
+    video:
+      length: shortest
+      fillin: false
+      files:
+        - filename: '../done/shoot_robot.mp4'
+          position: fullscreen
+    sound:
+      options:
+        original: false
+        add_base_noise: true
+  - scene: cain
+    video:
+      length: shortest
+      fillin: noise
+      files:
+        - filename: '../done/caindies.mp4'
+          position: random
+        - filename: '../done/caindies.mp4'
+          position: random
+          startat: 2
+    sound:
+      options:
+        original: true
+
+  - scene: lain
+    video:
+      length: shortest
+      fillin: false
+      files:
+        - filename: '../done/lain_presenttime.mp4'
+          position: fullscreen
+    sound:
+      options:
+        original: false
