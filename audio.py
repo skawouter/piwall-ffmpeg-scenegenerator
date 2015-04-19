@@ -20,6 +20,9 @@ class Audio(object):
         if self.basenoise:
             self.files.append(AudioFile('', vtype='noise'))
 
+        if not self.files:
+            self.files.append(AudioFile('', vtype='silence'))
+
     def get_input_list(self):
         inputlist = []
         for fil in self.files:
@@ -82,6 +85,10 @@ class Audio(object):
             layers.append('[' + self.audioout + '][' + str(self.basenoisepos)
                 + ':a] amerge=inputs=2 [finalaudio]')
 
+
+        if not layers and not self.basenoise:
+            self.silpos = self.files.index([fil for fil in self.files if
+                fil.vtype == 'silence'][0]) + len(videofiles)
         return layers
 
     def get_finish_line(self):
@@ -90,4 +97,4 @@ class Audio(object):
         elif self.audioout:
             return " -map '[finalaudio]' "
         else:
-            return ''
+            return " -map '{0}:a' ".format(self.silpos)

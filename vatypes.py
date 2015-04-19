@@ -35,3 +35,6 @@ class AudioFile(VideoFile):
 
         if self.vtype == 'noise':
             return '  -ar 48000 -ac 2 -f s16le -i /dev/urandom '
+
+        if self.vtype == 'silence':
+            return ' -f lavfi -i aevalsrc=0 '
