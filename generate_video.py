@@ -4,13 +4,14 @@ import yaml
 import getopt
 import subprocess
 import generatescene
+import generategroup
+
 def main(argv):
 #    try:
         totalscenes = 0
-       
-        optlist, args = getopt.getopt(argv, 'pen:o:b:c:')
+        optlist, args = getopt.getopt(argv, 'pen:o:b:c:g:')
 
-        outputfile = ''
+        outputfile = groupscene = ''
         basepath = configpath = './'
         execflag = False
         for opt, arg in optlist:
@@ -24,6 +25,8 @@ def main(argv):
                 configpath = arg
             if opt == '-e':
                 execflag = True
+            if opt == '-g':
+                groupscene = arg
 
         with open(configpath + 'screenconfig.yaml') as f:
             screenconfig = yaml.safe_load(f)
@@ -41,17 +44,18 @@ def main(argv):
 
         if not totalscenes:
             totalscenes = len(sceneconfig['scenes'])
+        if groupscene:
+            arglist = generategroup.generate(sceneconfig, screenconfig,
+                basepath, groupscene)
+        else:
+            inputstr, complexfilter, endstr = generatescene.generate_scene(
+                 sceneconfig['scenes'][0], screenconfig, basepath)
 
-        inputstr, complexfilter, endstr = generatescene.generate_scene(
-             sceneconfig['scenes'][0], screenconfig, basepath)
+            arglist = ['ffmpeg'] + inputstr.split(' ')[1:]
+            arglist.append(complexfilter[0] +  '; '.join(complexfilter[1:-1])
+                + complexfilter[-1])
+            arglist += endstr
 
-        arglist = ['ffmpeg'] + inputstr.split(' ')[1:]
-        arglist.append(complexfilter[0] +  '; '.join(complexfilter[1:-1])
-            + complexfilter[-1])
-        arglist += endstr 
-
-        #limit file size to 40Mb
-        arglist.append(' -fs 41943040 ')
         arglist.append(outputfile)
 
         arglist = [ x for x in arglist if x ]

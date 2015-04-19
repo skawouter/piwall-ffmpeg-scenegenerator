@@ -1,0 +1,25 @@
+first:
+  scenes:
+  - scene: "train"
+    pre: 'noise'
+    prelength: 4
+    post: 'noise'
+    postlength: 4
+  - scene: "cypher"
+
+second :
+  scenes:
+  - scene: "train"
+    post: 'noise'
+    postlength: 4
+  - scene: "error"
+  - scene: "exist"
+
+akira :
+  scenes:
+  - scene: "akira_single"
+    pre: 'noise'
+    prelength: 1
+  - scene: "akira_distort"
+    post: 'noise'
+    postlength: 2
