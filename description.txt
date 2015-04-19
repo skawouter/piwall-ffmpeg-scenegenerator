@@ -1,4 +1,5 @@
-
+scenes.yaml
+----------------
 scenes:
   - scene "scenename"
     video: #description of videos
@@ -21,3 +22,34 @@ scenes:
      files:
        -filename: "filename"
         position: 'random' or 'position'
+
+
+groupsceneconfig.yaml
+---------------------
+scenes will be concatenated sequentially
+groupscene :
+  - scene: "scenename"
+    pre: 'noise' | testimage | black
+    prelength: 4
+    post: 'noise'
+    postlength: 4
+    length: 10 (override length of scene)
+  - scene: "secondscenename"
+  - scene: "groupscenename"
+
+screenconfig.yaml
+-----------------
+screens:
+  rows:
+    - row:
+      - screen: 'screenname'
+        widht: screenwidth
+	height: screenheight
+      - screen: 'screenname2'
+        xoffset: x offset from previous screen
+	yoffset: y offset from previous screen
+        widht: screenwidth
+	height: screenheight
+    - row:
+       ....
+
