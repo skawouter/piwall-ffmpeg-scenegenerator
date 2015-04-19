@@ -25,11 +25,11 @@ class Video(object):
         inputlist = []
         for fil in self.files[:]:
             if fil.position.isdigit():
-                oldpos = self.files[fil.position]
-                if oldpos.position == fil.position:
+                oldpos = self.files[int(fil.position)]
+                if oldpos.position == int(fil.position):
                     raise Exception("2 Files fighting for same screen check scenecfg")
                 oldi = self.files.index(fil)
-                self.files[fil.position] = fil
+                self.files[int(fil.position)] = fil
                 self.files[oldi] = oldpos
 
         for fil in self.files[:]:

@@ -1,7 +1,7 @@
 class VideoFile(object):
     def __init__(self, filename, position='random', vtype='file', startat=0):
         self.filename = filename
-        self.position = position
+        self.position = str(position)
         self.vtype = vtype
         self.startat = startat
 
